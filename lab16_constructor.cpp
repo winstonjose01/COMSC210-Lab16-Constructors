@@ -39,10 +39,11 @@ class Color {
         // Returns the blue private variable
         int getBlue()   {return blue;}
 
-        // Prints the Color objects
+        // printRGB() prints the RBG value of a color object
+        // 
         void printRGB (string n, int r, int g, int b){
-            cout << setw(4) << "-----" << setw(9) << "-----" << setw(10) << "-----" << setw(9) << "-----" << endl;
-            cout << setw(3) << n << setw(10) << r << setw(9) << g << setw(9) << b << endl;
+            cout << setw(4) << "----------------" << setw(21) << "-----" << setw(10) << "-----" << setw(9) << "-----" << endl;
+            cout << setw(20) << n << setw(15) << r << setw(9) << g << setw(9) << b << endl;
         }
 
 };
@@ -54,13 +55,16 @@ int main(){
     // Generate random integers between 0-255 (RGB color value range)
     uniform_real_distribution<> color_distr{0,255};
 
-    // Instantiate 5 Color objects
+    // Instantiate 3 Color objects with the default constructor
     Color color1; Color color2; Color color3;
-
+    // Instantiate 3 Color objects with a partial constructor
     Color color4 (255,255); Color color5(160,160); Color color6(150,150);
-
+    // Instantiate 3 Color objects with a full parameter constructor
     Color color7(10,10,10); Color color8(255,80,255); Color color9(100,100,100);
     
+    // Print the header for the table
+    cout << setw(4) << "Constructor type" << setw(20) << "Red" << setw(11) << "Green" << setw(8) << "Blue" << endl;
+
     // Call the printRGB method and display output for object using Default Constructore
     color1.printRGB("Default Constructor: ",color1.getRed(), color1.getGreen(), color1.getBlue());
     color2.printRGB("Default Constructor: ", color2.getRed(), color2.getGreen(), color2.getBlue());
@@ -70,10 +74,11 @@ int main(){
     color5.printRGB("Partial Constructor: ",color5.getRed(), color5.getGreen(), color5.getBlue());
     color6.printRGB("Partial Constructor: ",color6.getRed(), color6.getGreen(), color5.getBlue());
 
-     // Print the header for the table
-    cout << setw(4) << "Color" << setw(8) << "Red" << setw(11) << "Green" << setw(8) << "Blue" << endl;
-    
- 
+    color7.printRGB("Full Parameter Cons: ",color7.getRed(), color7.getGreen(), color7.getBlue());
+    color8.printRGB("Full Parameter Cons: ",color8.getRed(), color8.getGreen(), color8.getBlue());
+    color9.printRGB("Full Parameter Cons: ",color9.getRed(), color9.getGreen(), color9.getBlue());
 
+
+    
     return 0;
 }
