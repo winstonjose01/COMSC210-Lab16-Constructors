@@ -40,7 +40,7 @@ class Color {
         int getBlue()   {return blue;}
 
         // Prints the Color objects
-        void printRGB (int n, int r, int g, int b){
+        void printRGB (string n, int r, int g, int b){
             cout << setw(4) << "-----" << setw(9) << "-----" << setw(10) << "-----" << setw(9) << "-----" << endl;
             cout << setw(3) << n << setw(10) << r << setw(9) << g << setw(9) << b << endl;
         }
@@ -59,26 +59,21 @@ int main(){
 
     Color color4 (255,255); Color color5(160,160); Color color6(150,150);
 
-    Color color7(10,10,10); Color color8(255,80,255); Color color9(100,100,100;)
-
+    Color color7(10,10,10); Color color8(255,80,255); Color color9(100,100,100);
     
-    // Set the red, green and blue colors for each Color object
-    color1.getRed(); color1.getGreen(); color1.getBlue();
-    color2.getRed(color_distr(gen)); color2.getGreen(color_distr(gen)); color2.getBlue(color_distr(gen));
-    color3.getRed(color_distr(gen)); color3.getGreen(color_distr(gen)); color3.getBlue(color_distr(gen));
+    // Call the printRGB method and display output for object using Default Constructore
+    color1.printRGB("Default Constructor: ",color1.getRed(), color1.getGreen(), color1.getBlue());
+    color2.printRGB("Default Constructor: ", color2.getRed(), color2.getGreen(), color2.getBlue());
+    color3.printRGB("Default Constructor: ", color3.getRed(), color3.getGreen(), color3.getBlue());
 
-    color4.setRed(color_distr(gen)); color4.setGreen(color_distr(gen)); color4.setBlue(color_distr(gen));
-    color5.setRed(color_distr(gen)); color5.setGreen(color_distr(gen)); color5.setBlue(color_distr(gen));
+    color4.printRGB("Partial Constructor: ",color4.getRed(), color4.getGreen(), color4.getBlue());
+    color5.printRGB("Partial Constructor: ",color5.getRed(), color5.getGreen(), color5.getBlue());
+    color6.printRGB("Partial Constructor: ",color6.getRed(), color6.getGreen(), color5.getBlue());
 
      // Print the header for the table
     cout << setw(4) << "Color" << setw(8) << "Red" << setw(11) << "Green" << setw(8) << "Blue" << endl;
     
-    // Call the printRGB method
-    color1.printRGB(1, color1.getRed(), color1.getGreen(), color1.getBlue());
-    color2.printRGB(2, color2.getRed(), color2.getGreen(), color2.getBlue());
-    color3.printRGB(3, color3.getRed(), color3.getGreen(), color3.getBlue());
-    color4.printRGB(4, color4.getRed(), color4.getGreen(), color4.getBlue());
-    color5.printRGB(5, color5.getRed(), color5.getGreen(), color5.getBlue());
+ 
 
     return 0;
 }
