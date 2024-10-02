@@ -1,4 +1,4 @@
-// COMSC210 | Lab 14 | Winston Jose
+// COMSC210 | Lab 16 | Winston Jose
 // Github link: https://github.com/winstonjose01/COMSC-210-Lab14
 
 # include <iostream>
@@ -14,8 +14,18 @@ class Color {
         int blue;
     
     public:
-        // Constructor
-        Color(){};
+        // Default Constructor
+        Color(){
+            red = 0; green = 0; blue = 0;
+        }
+        // Partial Constructor
+        Color (int r, int b){
+            red = r, green = 0; blue = b;
+        }
+        // Full Parameter Constructor
+        Color (int r, int g, int b){
+            red = r, green = g; blue = b;
+        }
         // Setter for private variable red
         void setRed(int r)      { red = r;}
         // Setter for private variable green
@@ -45,16 +55,18 @@ int main(){
     uniform_real_distribution<> color_distr{0,255};
 
     // Instantiate 5 Color objects
-    Color color1;
-    Color color2;
-    Color color3;
-    Color color4;
-    Color color5;
+    Color color1; Color color2; Color color3;
+
+    Color color4 (255,255); Color color5(160,160); Color color6(150,150);
+
+    Color color7(10,10,10); Color color8(255,80,255); Color color9(100,100,100;)
+
     
     // Set the red, green and blue colors for each Color object
-    color1.setRed(color_distr(gen)); color1.setGreen(color_distr(gen)); color1.setBlue(color_distr(gen));
-    color2.setRed(color_distr(gen)); color2.setGreen(color_distr(gen)); color2.setBlue(color_distr(gen));
-    color3.setRed(color_distr(gen)); color3.setGreen(color_distr(gen)); color3.setBlue(color_distr(gen));
+    color1.getRed(); color1.getGreen(); color1.getBlue();
+    color2.getRed(color_distr(gen)); color2.getGreen(color_distr(gen)); color2.getBlue(color_distr(gen));
+    color3.getRed(color_distr(gen)); color3.getGreen(color_distr(gen)); color3.getBlue(color_distr(gen));
+
     color4.setRed(color_distr(gen)); color4.setGreen(color_distr(gen)); color4.setBlue(color_distr(gen));
     color5.setRed(color_distr(gen)); color5.setGreen(color_distr(gen)); color5.setBlue(color_distr(gen));
 
